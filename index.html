@@ -5,18 +5,18 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rock Paper Scissors</title>
+  <title>RPSLS</title>
   <!-- main css -->
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="style.css">
   <!-- normalize css -->
-  <link rel="stylesheet" href="./normalize.css">
+  <link rel="stylesheet" href="normalize.css">
   <!-- font awesome -->
   <script src="https://kit.fontawesome.com/9e06307ce8.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <header>
-    <h1>Rock Paper Scissors</h1>
+    <h1>Rock Paper Scissors Lizard Spock</h1>
   </header>
   <div class="score-board">
     <div id="user-label" class="badge">user</div>
@@ -27,25 +27,35 @@
   <div class="result">
     <p>Paper covers rock. You win!</p>
   </div>
+
   <div class="choises">
-    <div class="choice" id="paper">
-      <i class="fa-regular fa-hand"></i>
-    </div>
     <div class="choice" id="rock">
       <i class="fa-regular fa-hand-back-fist"></i>
     </div>
     <div class="choice" id="scissors">
       <i class="fa-regular fa-hand-scissors"></i>
     </div>
-    <!-- <div class="choice" id="lizard">
+    <div class="choice" id="paper">
+      <i class="fa-regular fa-hand"></i>
+    </div>
+    <div class="choice" id="lizard">
       <i class="fa-regular fa-hand-lizard"></i>
     </div>
     <div class="choice" id="spock">
       <i class="fa-regular fa-hand-spock"></i>
-    </div> -->
+    </div>
   </div>
 
-  <p id="action-message">Make your move</p>
+  <p class="action-message">Make your move.</p>
+
+  <footer class="page-footer">
+    <p>
+      &copy; <span id="date"></span>
+      <span class="footer-logo">RPSLS</span>
+      Build by <a href="https://github.com/nirduk" target="_blank">Kudrin</a>
+    </p>
+  </footer>
+  <script src="./app.js"></script>
 </body>
 
 </html>

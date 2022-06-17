@@ -16,15 +16,15 @@ html {
 
 :root {
   /* colors */
-  --primary-100: #e2e0ff;
-  --primary-200: #c1beff;
-  --primary-300: #a29dff;
-  --primary-400: #837dff;
-  --primary-500: #645cff;
-  --primary-600: #504acc;
-  --primary-700: #3c3799;
-  --primary-800: #282566;
-  --primary-900: #141233;
+  --primary-100: #fae9cd;
+  --primary-200: #f6d39b;
+  --primary-300: #f1bc69;
+  --primary-400: #eda637;
+  --primary-500: #e89005;
+  --primary-600: #ba7304;
+  --primary-700: #8b5603;
+  --primary-800: #5d3a02;
+  --primary-900: #2e1d01;
 
   /* grey */
   --grey-50: #fafafa;
@@ -37,6 +37,7 @@ html {
   --grey-700: #3f3f46;
   --grey-800: #27272a;
   --grey-900: #18181b;
+
   /* rest of the colors */
   --black: #222;
   --white: #fff;
@@ -49,6 +50,7 @@ html {
   --headingFont: 'Roboto', sans-serif;
   --bodyFont: 'Nunito', sans-serif;
   --smallText: 0.7em;
+
   /* rest of the vars */
   --backgroundColor: var(--grey-800);
   --textColor: var(--grey-50);
@@ -276,28 +278,24 @@ ul {
 }
 
 /* 
-==========
+===============
 header
-==========
+===============
 */
 
-header {
+header > h1 {
   background: var(--grey-100);
-  color: var(--grey-800);
+  color: var(--grey-700);
   text-align: center;
-  padding: 0.1rem 0;
+  padding: 0.75rem;
+  margin: 0;
 }
 
 /* 
-==========
-main
-==========
+===============
+score-board
+===============
 */
-
-.fa-regular{
-  font-size: 3rem;
-  color: var(--grey-100);
-}
 
 .score-board {
   border: 2px solid var(--grey-100);
@@ -311,7 +309,7 @@ main
 }
 
 .badge {
-  background: #e89005;
+  background: var(--primary-500);
   color: var(--grey-700);
   font-size: 0.75rem;
   font-weight: bold;
@@ -330,9 +328,70 @@ main
   top: 33px;
   right: -25px;
 }
+
+.result > p{
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin: auto;
+}
+
 /* 
-==========
-footer
-==========
+===============
+choices
+===============
 */
 
+.choises {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.choise {
+  display: block;
+}
+
+.fa-regular{
+  font-size: 4rem;
+  color: var(--grey-100);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.fa-regular:hover {
+  color: var(--primary-500);
+  transform: scale(1.05);
+}
+
+.action-message {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  margin: auto;
+}
+
+/* 
+===============
+footer
+===============
+*/
+
+.page-footer {
+  background: var(--grey-100);
+  color: var(--grey-700);
+  height: 4rem;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-footer p {
+  margin-bottom: 0;
+}
+
+.footer-logo,
+.page-footer a {
+  color: var(--primary-500);
+}
