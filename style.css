@@ -349,6 +349,10 @@ score-board
   right: -25px;
 }
 
+.result {
+  height: 112px;
+}
+
 .result > p{
   font-size: 2rem;
   font-weight: bold;
@@ -366,7 +370,7 @@ choices
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  margin: 2rem 0;
+  margin: 6rem 0 2rem 0;
 }
 
 .figure-choise {
