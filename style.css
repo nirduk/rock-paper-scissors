@@ -347,6 +347,7 @@ score-board
   font-weight: bold;
   padding: 0.1rem 0;
   width: 50px;
+  border-radius: var(--borderRadius);
 }
 
 #user-label {
@@ -400,16 +401,10 @@ choices
 */
 
 .choises {
-  display: block;
+  display: flex;
   justify-content: center;
   gap: 1.5rem;
   margin: 6rem 0 2rem 0;
-}
-
-.figure-choise {
-  display: block;
-  align-items: center;
-  justify-content: center;
 }
 
 .fa-regular {
@@ -434,13 +429,14 @@ choices
 @media screen and (max-width: 540px) {
   .choises {
     display: grid;
+    justify-content: space-evenly;
     grid-template-columns: 1fr 1fr;
     margin: 2rem auto 2rem auto;
     margin-bottom: 2rem;
   }
   
   .figure-choise {
-    display: block;
+    display: flex;
     align-items: center;
     justify-content: center;
   }
