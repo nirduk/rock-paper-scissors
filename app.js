@@ -130,14 +130,10 @@ const game = (userChoice) => {
 }
 
 const main = () => {
-  rock_div.addEventListener('click', () => game('rock'));  
-
-  paper_div.addEventListener('click', () => game('paper')); 
-
-  scissors_div.addEventListener('click', () => game('scissor')); 
-
-  lizard_div.addEventListener('click', () => game('lizard')); 
-   
+  rock_div.addEventListener('click', () => game('rock'));
+  paper_div.addEventListener('click', () => game('paper'));
+  scissors_div.addEventListener('click', () => game('scissor'));
+  lizard_div.addEventListener('click', () => game('lizard'));
   spock_div.addEventListener('click', () => game('spock'));
 }
 
