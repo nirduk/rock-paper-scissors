@@ -29,26 +29,23 @@ const game = (userChoice) => {
     case 'lizardpaper':
     case 'paperspock':
     case 'paperrock':
-      console.log('user wins');
       break;
-    case 'rockscissors':
-    case 'rocklizard':
-    case 'scissorspaper':
-    case 'scissorslizard':
-    case 'spockscissors':
-    case 'spockrock':
-    case 'lizardspock':
-    case 'lizardpaper':
-    case 'paperspock':
-    case 'paperrock':
-      console.log('user loses');
+    case 'rockspock':
+    case 'rockpaper':
+    case 'scissorsrock':
+    case 'scissorsspock':
+    case 'spocklizard':
+    case 'spockpaper':
+    case 'lizardscissors':
+    case 'lizardrock':
+    case 'paperlizard':
+    case 'paperscissors':
       break;
     case 'rockrock':
     case 'scissorsscissors':
     case 'spockspock':
     case 'lizardlizard':
     case 'paperpaper':
-      console.log("it's a draw");
       break;
   }
 }
