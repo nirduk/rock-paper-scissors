@@ -11,49 +11,49 @@ const lizard_div = document.getElementById('lizard')
 const spock_div = document.getElementById('spock')
 
 const getComputerChoice = () => {
-  const choices = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
+  const choices = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock'];
   const randomNumber = Math.floor(Math.random() * 5);
   return choices[randomNumber];
 }
 
 const getStatus = (userChoice, computerChoice) => {
   switch (userChoice + computerChoice) {
-    case 'rockscissors':
-    case 'rocklizard':
-    case 'scissorsrock':
-    case 'lizardrock':
+    case 'RockScissors':
+    case 'RockLizard':
+    case 'ScissorsRock':
+    case 'LizardRock':
       return 'crushes';
 
-    case 'scissorspaper':
-    case 'paperscissors':
+    case 'ScissorsPaper':
+    case 'PaperScissors':
       return 'cuts';
 
-    case 'scissorslizard':
-    case 'lizardscissors':
+    case 'ScissorsLizard':
+    case 'LizardScissors':
       return 'decapitates';
 
-    case 'spockscissors':
-    case 'scissorsspock':
+    case 'SpockScissors':
+    case 'ScissorsSpock':
       return 'smashes';
 
-    case 'spockrock':
-    case 'rockspock':
+    case 'SpockRock':
+    case 'RockSpock':
       return 'vaporizes';
 
-    case 'lizardspock':
-    case 'spocklizard':
+    case 'LizardSpock':
+    case 'SpockLizard':
       return 'poisons';
 
-    case 'lizardpaper':
-    case 'paperlizard':
+    case 'LizardPaper':
+    case 'PaperLizard':
       return 'eats';
 
-    case 'paperspock':
-    case 'spockpaper':
+    case 'PaperSpock':
+    case 'SpockPaper':
       return 'disproves';
 
-    case 'paperrock':
-    case 'rockpaper':
+    case 'PaperRock':
+    case 'RockPaper':
       return 'covers';
   }
 }
@@ -72,42 +72,42 @@ const lose = (userChoice, computerChoice) => {
   result_p.innerHTML = `${computerChoice} ${getStatus(userChoice, computerChoice)} ${userChoice}. </br>You lose!`
 }
 
-const draw = (userChoice, computerChoice) => {
-  result_p.innerHTML = `it's a draw.`
+const draw = () => {
+  result_p.innerHTML = `It's a draw.`
 }
 
 const game = (userChoice) => {
   const computerChoice = getComputerChoice();
   switch (userChoice + computerChoice) {
-    case 'rockscissors':
-    case 'rocklizard':
-    case 'scissorspaper':
-    case 'scissorslizard':
-    case 'spockscissors':
-    case 'spockrock':
-    case 'lizardspock':
-    case 'lizardpaper':
-    case 'paperspock':
-    case 'paperrock':
+    case 'RockScissors':
+    case 'RockLizard':
+    case 'ScissorsPaper':
+    case 'ScissorsLizard':
+    case 'SpockScissors':
+    case 'SpockRock':
+    case 'LizardSpock':
+    case 'LizardPaper':
+    case 'PaperSpock':
+    case 'PaperRock':
       win(userChoice, computerChoice);
       break;
-    case 'rockspock':
-    case 'rockpaper':
-    case 'scissorsrock':
-    case 'scissorsspock':
-    case 'spocklizard':
-    case 'spockpaper':
-    case 'lizardscissors':
-    case 'lizardrock':
-    case 'paperlizard':
-    case 'paperscissors':
+    case 'Rockspock':
+    case 'RockPaper':
+    case 'ScissorsRock':
+    case 'ScissorsSpock':
+    case 'SpockLizard':
+    case 'SpockPaper':
+    case 'LizardScissors':
+    case 'LizardRock':
+    case 'PaperLizard':
+    case 'PaperScissors':
       lose(userChoice, computerChoice);
       break;
-    case 'rockrock':
-    case 'scissorsscissors':
-    case 'spockspock':
-    case 'lizardlizard':
-    case 'paperpaper':
+    case 'RockRock':
+    case 'ScissorsScissors':
+    case 'Spockspock':
+    case 'LizardLizard':
+    case 'PaperPaper':
       draw(userChoice, computerChoice);
       break;
   }
@@ -115,23 +115,23 @@ const game = (userChoice) => {
 
 const main = () => {
   rock_div.addEventListener('click', function() {
-    game('rock')
+    game('Rock')
   })
   
   paper_div.addEventListener('click', function() {
-    game('paper')
+    game('Paper')
   })
   
   scissors_div.addEventListener('click', function() {
-    game('scissors')
+    game('Scissors')
   })
   
   lizard_div.addEventListener('click', function() {
-    game('lizard')
+    game('Lizard')
   })
   
   spock_div.addEventListener('click', function() {
-    game('spock')
+    game('Spock')
   })
 }
 
