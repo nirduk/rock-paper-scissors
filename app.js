@@ -71,7 +71,8 @@ const win = (userChoice, computerChoice) => {
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
   result_p.innerHTML = `${makeFirstLetterBig(userChoice)} ${getStatus(userChoice, computerChoice)} ${makeFirstLetterBig(computerChoice)}. </br>You win!`;
-  document.querySelector('.score-board').classList.add('green-glow');
+  scoreBoard_div.classList.add('green-glow');
+  setTimeout(() => scoreBoard_div.classList.remove('green-glow'), 300);
 }
 
 const lose = (userChoice, computerChoice) => {
@@ -79,14 +80,16 @@ const lose = (userChoice, computerChoice) => {
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
   result_p.innerHTML = `${makeFirstLetterBig(computerChoice)} ${getStatus(userChoice, computerChoice)} ${makeFirstLetterBig(userChoice)}. </br>You lose!`
-  document.querySelector('.score-board').classList.add('red-glow');
+  scoreBoard_div.classList.add('red-glow');
+  setTimeout(() => scoreBoard_div.classList.remove('red-glow'), 300);
+
 
 }
 
 const draw = () => {
   result_p.innerHTML = `It's a draw.`
-  document.querySelector('.score-board').classList.add('yellow-glow');
-
+  scoreBoard_div.classList.add('yellow-glow');
+  setTimeout(() => scoreBoard_div.classList.remove('yellow-glow'), 300);
 }
 
 const game = (userChoice) => {
