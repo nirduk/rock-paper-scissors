@@ -44,7 +44,7 @@ html {
   --red-dark: #842029;
   --green-light: #d1e7dd;
   --green-dark: #0f5132;
-
+  
   /* fonts  */
   --headingFont: 'Roboto', sans-serif;
   --bodyFont: 'Nunito', sans-serif;
@@ -281,7 +281,12 @@ header
 ==========
 */
 
-
+header {
+  background: var(--grey-100);
+  color: var(--grey-800);
+  text-align: center;
+  padding: 0.1rem 0;
+}
 
 /* 
 ==========
@@ -291,9 +296,40 @@ main
 
 .fa-regular{
   font-size: 3rem;
-  color: var(--white);
+  color: var(--grey-100);
 }
 
+.score-board {
+  border: 2px solid var(--grey-100);
+  width: 200px;
+  margin: 2rem auto;
+  font-size: 3rem;
+  border-radius: var(--borderRadius);
+  text-align: center;
+  padding: 0.25rem 0;
+  position: relative;
+}
+
+.badge {
+  background: #e89005;
+  color: var(--grey-700);
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.1rem 0;
+  width: 50px;
+}
+
+#user-label {
+  position: absolute;
+  top: 33px;
+  left: -25px;
+}
+
+#computer-label {
+  position: absolute;
+  top: 33px;
+  right: -25px;
+}
 /* 
 ==========
 footer
