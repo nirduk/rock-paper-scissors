@@ -297,6 +297,12 @@ header h1 {
   margin: 0;
 }
 
+@media screen and (max-width: 540px) {
+  header {
+    height: 6rem;    
+  }
+}
+
 /* 
 ===============
 page
@@ -308,7 +314,13 @@ page
   max-width: var(--max-width);
   margin: 0 auto;
   padding-top: 2rem;
-  min-height: calc(100vh - (4rem + 3rem));
+  min-height: calc(100vh - (4rem + 2rem));
+}
+
+@media screen and (max-width: 540px) {
+  .page {
+    min-height: calc(100vh - (6rem + 2rem));  
+  }
 }
 
 /* 
@@ -375,6 +387,12 @@ score-board
   box-shadow: 0 0 20px #a16207;
 }
 
+@media screen and (max-width: 540px) {
+  .result {
+    height: 170px;
+  }
+}
+
 /* 
 ===============
 choices
@@ -382,7 +400,7 @@ choices
 */
 
 .choises {
-  display: flex;
+  display: block;
   justify-content: center;
   gap: 1.5rem;
   margin: 6rem 0 2rem 0;
@@ -390,9 +408,11 @@ choices
 
 .figure-choise {
   display: block;
+  align-items: center;
+  justify-content: center;
 }
 
-.fa-regular{
+.fa-regular {
   font-size: 4rem;
   color: var(--grey-100);
   cursor: pointer;
@@ -411,6 +431,26 @@ choices
   margin: auto;
 }
 
+@media screen and (max-width: 540px) {
+  .choises {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 2rem auto 2rem auto;
+    margin-bottom: 2rem;
+  }
+  
+  .figure-choise {
+    display: block;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .fa-regular {
+    display: flex;
+    margin-left: 45px;
+  }
+}
+
 /* 
 ===============
 footer
@@ -420,7 +460,7 @@ footer
 .page-footer {
   background: var(--grey-100);
   color: var(--grey-700);
-  height: 3rem;  
+  height: 2rem;  
   display: flex;
   align-items: center;
   justify-content: center;
