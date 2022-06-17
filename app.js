@@ -61,9 +61,9 @@ const getStatus = (userChoice, computerChoice) => {
 const makeFirstLetterBig = (choice) => {
   if (choice === 'rock') return 'Rock';
   if (choice === 'paper') return 'Paper';
-  if (choice === 'scisors') return 'Scissors';
+  if (choice === 'scissors') return 'Scissors';
   if (choice === 'lizard') return 'Lizard';
-  return 'Spock'
+  return 'Spock';
 }
 
 const win = (userChoice, computerChoice) => {
