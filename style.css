@@ -311,14 +311,15 @@ page
 @media screen and (max-width: 540px) {
   .page {
     padding-top: 2rem;
-    min-height: calc(100vh - (1rem + 4rem));
+    min-height: calc(100vh - 4rem);
   }
 
   .robot {
-    top: 1rem;
-    right: 0;
+    width: 100%;
+    flex-direction: row;
+    justify-content: start;
   }
-
+  
   .robot h3 {
     font-size: 1.7rem;
     margin: 0;
@@ -489,8 +490,9 @@ player
     justify-content: center;
   }
 
-  .player h3{
+  .player h3{    
     font-size: 1.7rem;
+    margin-left: auto;
   }
 }
 
