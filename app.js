@@ -182,4 +182,4 @@ const main = () => {
   spock_div.addEventListener('click', () => game('spock'));
 }
 
-main ();
+main();
