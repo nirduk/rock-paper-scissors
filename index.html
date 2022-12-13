@@ -3,9 +3,12 @@
 
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" href="favicon\favicon.ico" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RPSLS</title>
+  <meta name="description" content="rock paper scissors game made with js" />
+  <link rel="apple-touch-icon" href="favicon\logo192.png" />
+  <title>RPSLS | Oleksandr Kudrin</title>
   <!-- main css -->
   <link rel="stylesheet" href="style.css">
   <!-- normalize css -->
@@ -15,49 +18,66 @@
 </head>
 
 <body>
-  <header>
-    <h1>Rock Paper Scissors Lizard Spock</h1>
-  </header>
-
   <main class="page">
+    <div class="robot">
+      <h3>Computer</h3>
+      <i class="fa-solid fa-robot"></i>
+    </div>
     <div class="score-board">
-      <div id="user-label" class="badge">user</div>
-      <div id="computer-label" class="badge">comp</div>
-      <span id="user-score">0</span>:<span id="computer-score">0</span>
-    </div>
-  
-    <div class="result">
-      <p></p>
-    </div>
-  
-    <div class="choises">
-      <div class="figure-choice" id="rock">
-        <i class="fa-regular fa-hand-back-fist"></i>
+      <div id="computer-choise-preview"></div>
+      <div class="score">
+        <span id="user-score">0</span><span> : </span><span id="computer-score">0</span>
       </div>
-      <div class="figure-choice" id="paper">
-        <i class="fa-regular fa-hand"></i>
-      </div>
-      <div class="figure-choice" id="scissors">
-        <i class="fa-regular fa-hand-scissors"></i>
-      </div>
-      <div class="figure-choice" id="lizard">
-        <i class="fa-regular fa-hand-lizard"></i>
-      </div>
-      <div class="figure-choice" id="spock">
-        <i class="fa-regular fa-hand-spock"></i>
+      <div id="user-choise-preview"></div>
+
+      <div class="result">
+        <h3></h3>
       </div>
     </div>
-  
-    <p class="action-message">Choose your fighter.</p>
+
+    <div class="player">
+      <h3>You</h3>
+      <p class="action-message">Choose one:</p>
+
+      <div class="choises">
+        <div class="figure-choice" id="rock">
+          <p>Rock</p>
+          <i class="fa-regular fa-hand-back-fist"></i>
+        </div>
+        <div class="figure-choice" id="paper">
+          <p>Paper</p>
+          <i class="fa-regular fa-hand"></i>
+        </div>
+        <div class="figure-choice" id="scissors">
+          <p>Scissors</p>
+          <i class="fa-regular fa-hand-scissors"></i>
+        </div>
+        <div class="figure-choice" id="lizard">
+          <p>Lizard</p>
+          <i class="fa-regular fa-hand-lizard"></i>
+        </div>
+        <div class="figure-choice" id="spock">
+          <p>Spock</p>
+          <i class="fa-regular fa-hand-spock"></i>
+        </div>
+      </div>
+    </div>
   </main>
 
-  <footer class="page-footer">
-    <p>
-      &copy; <span id="date"></span>
-      <span class="footer-logo">RPSLS</span>
-      Build by <a href="https://github.com/nirduk" target="_blank">Kudrin</a>
-    </p>
+  <footer>
+    <div class="footer">
+      by
+      <a href="https://github.com/nirduk" target="_blank" rel="noreferrer">
+        <span class="f1">K</span>
+        <span class="f2">u</span>
+        <span class="f3">d</span>
+        <span class="f4">r</span>
+        <span class="f5">i</span>
+        <span class="f6">n</span>
+      </a>
+    </div>
   </footer>
-  <script src="app.js"></script>  
+  <script src="app.js"></script>
 </body>
+
 </html>

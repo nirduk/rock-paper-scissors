@@ -3,12 +3,16 @@ let computerScore = 0;
 const userScore_span = document.getElementById('user-score');
 const computerScore_span = document.getElementById('computer-score');
 const scoreBoard_div = document.querySelector('.score-board');
-const result_p = document.querySelector('.result > p')
+const result_h = document.querySelector('.result > h3')
+const robot_h = document.querySelector('.robot > h3')
+const player_h = document.querySelector('.player > h3')
 const rock_div = document.getElementById('rock')
 const paper_div = document.getElementById('paper')
 const scissors_div = document.getElementById('scissors')
 const lizard_div = document.getElementById('lizard')
 const spock_div = document.getElementById('spock')
+const robot_div = document.getElementById('computer-choise-preview')
+const user_div = document.getElementById('user-choise-preview')
 
 const getComputerChoice = () => {
   const choices = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
@@ -70,30 +74,71 @@ const win = (userChoice, computerChoice) => {
   userScore++;
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
-  result_p.innerHTML = `${makeFirstLetterBig(userChoice)} ${getStatus(userChoice, computerChoice)} ${makeFirstLetterBig(computerChoice)}. </br>You win!`;
+  player_h.innerHTML = `You Won!`;
   scoreBoard_div.classList.add('green-glow');
-  setTimeout(() => scoreBoard_div.classList.remove('green-glow'), 300);
+  setTimeout(() => scoreBoard_div.classList.remove('green-glow'), 600);
 }
 
 const lose = (userChoice, computerChoice) => {
   computerScore++;
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
-  result_p.innerHTML = `${makeFirstLetterBig(computerChoice)} ${getStatus(userChoice, computerChoice)} ${makeFirstLetterBig(userChoice)}. </br>You lose!`
+  robot_h.innerHTML = `Computer Won!`;
   scoreBoard_div.classList.add('red-glow');
-  setTimeout(() => scoreBoard_div.classList.remove('red-glow'), 300);
-
-
+  setTimeout(() => scoreBoard_div.classList.remove('red-glow'), 600);
 }
 
 const draw = () => {
-  result_p.innerHTML = `It's a draw.`
+  result_h.innerHTML = `It's a draw.`;
   scoreBoard_div.classList.add('yellow-glow');
-  setTimeout(() => scoreBoard_div.classList.remove('yellow-glow'), 300);
+  setTimeout(() => scoreBoard_div.classList.remove('yellow-glow'), 600);
 }
 
 const game = (userChoice) => {
   const computerChoice = getComputerChoice();
+
+  result_h.innerHTML = ``;
+  robot_h.innerHTML = `Computer`;
+  player_h.innerHTML = `You`;
+  user_div.classList.remove('fa-regular', 'fa-hand-back-fist', 'fa-hand', 'fa-hand-scissors', 'fa-hand-lizard', 'fa-hand-spock');
+  robot_div.classList.remove('fa-regular', 'fa-hand-back-fist', 'fa-hand', 'fa-hand-scissors', 'fa-hand-lizard', 'fa-hand-spock');
+
+  switch (computerChoice) {
+    case 'rock':
+      robot_div.classList.add('fa-regular', 'fa-hand-back-fist');
+      break;
+    case 'paper':
+      robot_div.classList.add('fa-regular', 'fa-hand');
+      break;
+    case 'scissors':
+      robot_div.classList.add('fa-regular', 'fa-hand-scissors');
+      break;
+    case 'lizard':
+      robot_div.classList.add('fa-regular', 'fa-hand-lizard');
+      break;
+    case 'spock':
+      robot_div.classList.add('fa-regular', 'fa-hand-spock');
+      break;
+  }
+
+  switch (userChoice) {
+    case 'rock':
+      user_div.classList.add('fa-regular', 'fa-hand-back-fist');
+      break;
+    case 'paper':
+      user_div.classList.add('fa-regular', 'fa-hand');
+      break;
+    case 'scissors':
+      user_div.classList.add('fa-regular', 'fa-hand-scissors');
+      break;
+    case 'lizard':
+      user_div.classList.add('fa-regular', 'fa-hand-lizard');
+      break;
+    case 'spock':
+      user_div.classList.add('fa-regular', 'fa-hand-spock');
+      break;
+  }
+
   switch (userChoice + computerChoice) {
     case 'rockscissors':
     case 'rocklizard':
@@ -137,8 +182,4 @@ const main = () => {
   spock_div.addEventListener('click', () => game('spock'));
 }
 
-main();
-
-const date = document.getElementById('date')
-const currentYear = new Date().getFullYear()
-date.textContent = currentYear
+main ();
