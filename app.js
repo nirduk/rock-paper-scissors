@@ -11,8 +11,8 @@ const paper_div = document.getElementById('paper')
 const scissors_div = document.getElementById('scissors')
 const lizard_div = document.getElementById('lizard')
 const spock_div = document.getElementById('spock')
-const robot_div = document.getElementById('computer-choise-preview')
-const user_div = document.getElementById('user-choise-preview')
+const robot_div = document.getElementById('computer-choice-preview')
+const user_div = document.getElementById('user-choice-preview')
 
 const getComputerChoice = () => {
   const choices = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
@@ -20,57 +20,57 @@ const getComputerChoice = () => {
   return choices[randomNumber];
 }
 
-const getStatus = (userChoice, computerChoice) => {
-  switch (userChoice + computerChoice) {
-    case 'rockscissors':
-    case 'rocklizard':
-    case 'scissorsrock':
-    case 'lizardrock':
-      return 'crushes';
+// const getStatus = (userChoice, computerChoice) => {
+//   switch (userChoice + computerChoice) {
+//     case 'rockscissors':
+//     case 'rocklizard':
+//     case 'scissorsrock':
+//     case 'lizardrock':
+//       return 'crushes';
 
-    case 'scissorspaper':
-    case 'paperscissors':
-      return 'cuts';
+//     case 'scissorspaper':
+//     case 'paperscissors':
+//       return 'cuts';
 
-    case 'scissorslizard':
-    case 'lizardscissors':
-      return 'decapitates';
+//     case 'scissorslizard':
+//     case 'lizardscissors':
+//       return 'decapitates';
 
-    case 'spockscissors':
-    case 'scissorsspock':
-      return 'smashes';
+//     case 'spockscissors':
+//     case 'scissorsspock':
+//       return 'smashes';
 
-    case 'spockrock':
-    case 'rockspock':
-      return 'vaporizes';
+//     case 'spockrock':
+//     case 'rockspock':
+//       return 'vaporizes';
 
-    case 'lizardspock':
-    case 'spocklizard':
-      return 'poisons';
+//     case 'lizardspock':
+//     case 'spocklizard':
+//       return 'poisons';
 
-    case 'lizardpaper':
-    case 'paperlizard':
-      return 'eats';
+//     case 'lizardpaper':
+//     case 'paperlizard':
+//       return 'eats';
 
-    case 'paperspock':
-    case 'spockpaper':
-      return 'disproves';
+//     case 'paperspock':
+//     case 'spockpaper':
+//       return 'disproves';
 
-    case 'paperrock':
-    case 'rockpaper':
-      return 'covers';
-  }
-}
+//     case 'paperrock':
+//     case 'rockpaper':
+//       return 'covers';
+//   }
+// }
 
-const makeFirstLetterBig = (choice) => {
-  if (choice === 'rock') return 'Rock';
-  if (choice === 'paper') return 'Paper';
-  if (choice === 'scissors') return 'Scissors';
-  if (choice === 'lizard') return 'Lizard';
-  return 'Spock';
-}
+// const makeFirstLetterBig = (choice) => {
+//   if (choice === 'rock') return 'Rock';
+//   if (choice === 'paper') return 'Paper';
+//   if (choice === 'scissors') return 'Scissors';
+//   if (choice === 'lizard') return 'Lizard';
+//   return 'Spock';
+// }
 
-const win = (userChoice, computerChoice) => {
+const win = () => {
   userScore++;
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
@@ -79,7 +79,7 @@ const win = (userChoice, computerChoice) => {
   setTimeout(() => scoreBoard_div.classList.remove('green-glow'), 600);
 }
 
-const lose = (userChoice, computerChoice) => {
+const lose = () => {
   computerScore++;
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
@@ -96,6 +96,7 @@ const draw = () => {
 
 const game = (userChoice) => {
   const computerChoice = getComputerChoice();
+  const choices = [];
 
   result_h.innerHTML = ``;
   robot_h.innerHTML = `Computer`;
@@ -103,75 +104,85 @@ const game = (userChoice) => {
   user_div.classList.remove('fa-regular', 'fa-hand-back-fist', 'fa-hand', 'fa-hand-scissors', 'fa-hand-lizard', 'fa-hand-spock');
   robot_div.classList.remove('fa-regular', 'fa-hand-back-fist', 'fa-hand', 'fa-hand-scissors', 'fa-hand-lizard', 'fa-hand-spock');
 
-  switch (computerChoice) {
-    case 'rock':
-      robot_div.classList.add('fa-regular', 'fa-hand-back-fist');
-      break;
-    case 'paper':
-      robot_div.classList.add('fa-regular', 'fa-hand');
-      break;
-    case 'scissors':
-      robot_div.classList.add('fa-regular', 'fa-hand-scissors');
-      break;
-    case 'lizard':
-      robot_div.classList.add('fa-regular', 'fa-hand-lizard');
-      break;
-    case 'spock':
-      robot_div.classList.add('fa-regular', 'fa-hand-spock');
-      break;
-  }
-
-  switch (userChoice) {
-    case 'rock':
-      user_div.classList.add('fa-regular', 'fa-hand-back-fist');
-      break;
-    case 'paper':
-      user_div.classList.add('fa-regular', 'fa-hand');
-      break;
-    case 'scissors':
-      user_div.classList.add('fa-regular', 'fa-hand-scissors');
-      break;
-    case 'lizard':
-      user_div.classList.add('fa-regular', 'fa-hand-lizard');
-      break;
-    case 'spock':
-      user_div.classList.add('fa-regular', 'fa-hand-spock');
-      break;
-  }
-
-  switch (userChoice + computerChoice) {
-    case 'rockscissors':
-    case 'rocklizard':
-    case 'scissorspaper':
-    case 'scissorslizard':
-    case 'spockscissors':
-    case 'spockrock':
-    case 'lizardspock':
-    case 'lizardpaper':
-    case 'paperspock':
-    case 'paperrock':
-      win(userChoice, computerChoice);
-      break;
-    case 'rockspock':
-    case 'rockpaper':
-    case 'scissorsrock':
-    case 'scissorsspock':
-    case 'spocklizard':
-    case 'spockpaper':
-    case 'lizardscissors':
-    case 'lizardrock':
-    case 'paperlizard':
-    case 'paperscissors':
-      lose(userChoice, computerChoice);
-      break;
-    case 'rockrock':
-    case 'scissorsscissors':
-    case 'spockspock':
-    case 'lizardlizard':
-    case 'paperpaper':
-      draw(userChoice, computerChoice);
-      break;
-  }
+  new Promise(resolve => {
+    setTimeout(() => resolve(userChoice), 100)
+    choices.push(userChoice);
+  }).then(() => {
+    switch (choices[0]) {
+      case 'rock':
+        user_div.classList.add('fa-regular', 'fa-hand-back-fist');
+        break;
+      case 'paper':
+        user_div.classList.add('fa-regular', 'fa-hand');
+        break;
+      case 'scissors':
+        user_div.classList.add('fa-regular', 'fa-hand-scissors');
+        break;
+      case 'lizard':
+        user_div.classList.add('fa-regular', 'fa-hand-lizard');
+        break;
+      case 'spock':
+        user_div.classList.add('fa-regular', 'fa-hand-spock');
+        break;
+    }
+  }).then(() => {
+    return new Promise(resolve => {
+      setTimeout(() => resolve(computerChoice), 400)
+      choices.push(computerChoice)
+    })
+  }).then(() => {
+    switch (choices[1]) {
+      case 'rock':
+        robot_div.classList.add('fa-regular', 'fa-hand-back-fist');
+        break;
+      case 'paper':
+        robot_div.classList.add('fa-regular', 'fa-hand');
+        break;
+      case 'scissors':
+        robot_div.classList.add('fa-regular', 'fa-hand-scissors');
+        break;
+      case 'lizard':
+        robot_div.classList.add('fa-regular', 'fa-hand-lizard');
+        break;
+      case 'spock':
+        robot_div.classList.add('fa-regular', 'fa-hand-spock');
+        break;
+    }
+  }).then(() => {
+    switch (choices[0] + choices[1]) {
+      case 'rockscissors':
+      case 'rocklizard':
+      case 'scissorspaper':
+      case 'scissorslizard':
+      case 'spockscissors':
+      case 'spockrock':
+      case 'lizardspock':
+      case 'lizardpaper':
+      case 'paperspock':
+      case 'paperrock':
+        win(choices[0] + choices[1]);
+        break;
+      case 'rockspock':
+      case 'rockpaper':
+      case 'scissorsrock':
+      case 'scissorsspock':
+      case 'spocklizard':
+      case 'spockpaper':
+      case 'lizardscissors':
+      case 'lizardrock':
+      case 'paperlizard':
+      case 'paperscissors':
+        lose(choices[0] + choices[1]);
+        break;
+      case 'rockrock':
+      case 'scissorsscissors':
+      case 'spockspock':
+      case 'lizardlizard':
+      case 'paperpaper':
+        draw(choices[0] + choices[1]);
+        break;
+    }
+  })
 }
 
 const main = () => {
